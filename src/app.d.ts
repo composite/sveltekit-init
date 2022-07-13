@@ -5,16 +5,16 @@ import type M from 'materialize-css';
 // for information about these interfaces
 // and what to do when importing types
 declare namespace App {
-	// interface Locals {}
-	// interface Platform {}
-	// interface Session {}
-	// interface Stuff {}
+  // interface Locals {}
+  // interface Platform {}
+  // interface Session {}
+  // interface Stuff {}
 }
 
 declare module 'dayjs/locale/ko.js';
 declare module 'materialize-css/dist/js/materialize.js';
 declare global {
-	interface Window {
-		M: M; //materialize-css auto init
-	}
+  interface Window {
+    M: M; //materialize-css auto init
+  }
 }

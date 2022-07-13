@@ -1,52 +1,22 @@
-# create-svelte
+# SvelteKit Initialized
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+- SvelteKit
+- Typescript
+- ESLint and Prettier (`eslint` will also run `prettier`!)
+- Playwright E2E Test
 
-## Creating a project
+## SvelteKit HOW2USE
 
-If you're seeing this, you've probably already done this step. Congrats!
+Please refer [this repo](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-```bash
-# create a new project in the current directory
-npm init svelte
+## What are these in `dependencies`?
 
-# create a new project in my-app
-npm init svelte my-app
-```
+Don't mind. You can delete them of `dependencies` in `package.json` for start customizing own environment.
+It's just fit for my work environment.
+I'll clean up later for make yours quickly.
+Yes. WIP.
 
-## Developing
+## Can I use this repo for javascript?
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-## Testing
-
-E2E test is using `playwright`. before first run, you must run below first:
-
-```bash
-pnpm exec playwright install
-```
-
-and `pnpm run test` for test pages
-
-## Libs
-
-- [Materialize](https://materializecss.com/)
+Please refer eslint config, plugins, and delete typescript for using javascript.
+But, you can mix typescript and javascript per `.svelte` file.
