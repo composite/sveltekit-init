@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  extends: ["plugin:svelte/recommended", "plugin:prettier/recommended"],
+  extends: ["plugin:svelte/prettier", "plugin:prettier/recommended"],
   plugins: ['@typescript-eslint'],
   ignorePatterns: ['*.cjs', 'node_modules', 'dist', 'build'],
   overrides: [
