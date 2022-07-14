@@ -13,7 +13,7 @@ const config = {
   },
 
   server: {
-    port: '3101'
+    port: '3100'
   },
 
   preview: {

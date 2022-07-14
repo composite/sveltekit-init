@@ -1,0 +1,180 @@
+.w-auto {
+  width: auto;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.a-auto {
+  @extend .w-auto, .h-auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.a-full {
+  @extend .w-full, .h-full;
+}
+
+.w-half {
+  width: 50%;
+}
+
+.h-half {
+  height: 50%;
+}
+
+.a-half {
+  @extend .w-half, .h-half;
+}
+
+.w-quat {
+  width: 25%;
+}
+
+.h-quat {
+  height: 25%;
+}
+
+.a-quat {
+  @extend .w-quat, .h-quat;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+.clear-l {
+  clear: left;
+}
+
+.clear-r {
+  clear: right;
+}
+
+.clear-b {
+  clear: both;
+}
+
+$mps: ('m': 'margin', 'p': 'padding');
+$dirs: ('l': 'left', 'r': 'right', 't': 'top', 'b': 'bottom');
+
+@for $i from 0 through 12 {
+
+  @each $u,
+  $w in $mps {
+    .#{$u}-#{$i} {
+      #{$w}: 0.25em*$i;
+    }
+
+    .#{$u}x-#{$i} {
+      #{$w}-left: 0.25em*$i;
+      #{$w}-right: 0.25em*$i;
+    }
+
+    .#{$u}y-#{$i} {
+      #{$w}-top: 0.25em*$i;
+      #{$w}-bottom: 0.25em*$i;
+    }
+
+    @each $c,
+    $p in $dirs {
+      .#{$u}#{$c}-#{$i} {
+        #{$w}-#{$p}: 0.25em*$i;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 10 {
+  .bg-lighten-#{$i} {
+    background-color: transparentize(white, 1 - (0.1 * $i));
+  }
+
+  .bg-darken-#{$i} {
+    background-color: transparentize(black, 1 - (0.1 * $i));
+  }
+}
+
+.flex {
+  display: flex;
+
+  &.inline {
+    display: inline-flex;
+  }
+
+  @each $prop in (row, row-reverse, column, column-reverse) {
+    &.flex-#{$prop} {
+      flex-direction: $prop;
+    }
+  }
+
+  @each $prop in (nowrap, wrap, wrap-reverse) {
+    &.flex-#{$prop} {
+      flex-wrap: $prop;
+    }
+  }
+
+  &>.item {
+    &.grow {
+      flex-grow: 1;
+    }
+
+    &.shrink {
+      flex-shrink: 1;
+    }
+
+    @each $class,
+    $prop in ("auto": auto, "0": 0, "fill": fill, "max": max-content, "min": min-content, "fit": fit-content, "content": content) {
+      &.basis-#{$class} {
+        flex-basis: $prop;
+      }
+    }
+  }
+}
+
+@each $class,
+$prop in ("start": flex-start, "end": flex-end, "center": center, "between": space-between, "around": space-around) {
+  .justify-#{$class} {
+    justify-content: $prop;
+  }
+}
+
+@each $class,
+$prop in ("stretch": stretch, "start": flex-start, "end": flex-end, "center": center, "baseline": baseline) {
+  .items-#{$class} {
+    align-items: $prop;
+  }
+}
+
+@each $class,
+$prop in ("stretch": stretch, "start": flex-start, "end": flex-end, "center": center, "between": space-between, "around": space-around) {
+  .content-#{$class} {
+    align-content: $prop;
+  }
+}
+
+@each $class,
+$prop in ("auto": auto, "stretch": stretch, "start": flex-start, "end": flex-end, "center": center, "baseline": baseline) {
+  .self-#{$class} {
+    align-self: $prop;
+  }
+}
+
+.order-first {
+  order: 0;
+}
+
+.order-last {
+  order: 9999;
+}

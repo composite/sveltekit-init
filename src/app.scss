@@ -1,2 +1,52 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
-@import 'materialize-css/sass/materialize';
+@import 'scss/util';
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  box-sizing: content-box;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.block.inline {
+  display: inline-block;
+}
+
+html,
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.full-vh {
+  height: 100vh;
+}
+
+.margin-fix1 {
+  border: 1px solid transparent;
+}
+
+.margin-fix2 {
+  padding: 1px;
+}
+
+#docuroot {
+  min-width: 100vw;
+  min-height: 100vh;
+  //@extend .teal, .darken-4
+}
+
+.container-fluid {
+  padding: 0 2rem;
+}
